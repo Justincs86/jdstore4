@@ -7,6 +7,15 @@
 <%= f.input :quantity %>
 <%= f.input :price %>
 
+ <% if @product.image.present? %>
+   <span> Current product picture <br>
+   <%= image_tag(@product.image.thumb.url) %>
+  </span>
+ <% end %>
+
+   <%= f.input :image, as: :file %>
+
+
 <%= f.submit "Edit", class: "btn btn-success" %>
 
 <% end %>
