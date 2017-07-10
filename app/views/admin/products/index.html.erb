@@ -28,7 +28,8 @@
           <td> <%= product.price %></td>
           <td> <%= product.created_at.to_s(:long) %></td>
           <td>
-
+              <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-success") %>
+              <%= link_to("Delete", admin_product_path(product), method: :delete, :data => { confirm: "Are you sure?"}, class: "btn btn-sm btn-danger" )%>
           </td>
       </tr>
       <% end %>
