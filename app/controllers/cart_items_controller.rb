@@ -21,7 +21,7 @@ class CartItemsController < ApplicationController
      else
        flash[:warning] = "Unit not enough"
      end
-     
+
     redirect_to carts_path
   end
 
