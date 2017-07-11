@@ -33,6 +33,7 @@
             <% if current_user.is_admin? %>
               <li> <%= link_to("Admin Panel", admin_products_path) %></li>
             <% end %>
+              <li> <%= link_to("My Order", account_orders_path) %></li>
               <li> <%= link_to(content_tag(:i, "Logout", class: " fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
