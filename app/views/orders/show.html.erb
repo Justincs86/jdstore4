@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h1> Order Detail </h1>
+
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th width="80%"> Product Detail </th>
+              <th> Price </th>
+          </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+
+        <tr>
+            <td> <%= product_list.product_name %> </td>
+            <td> <%= product_list.product_price %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="price clearfix">
+      <span class="pull-right">
+        Total <%= @order.total %>
+      </span>
+    </div>
+
+    <hr>
+
+
+    <h1> Mailling Infomation</h1>
+
+    <table class="table table-striped table-bordered">
+      <tr>
+         <td> Purchaser </td>
+      </tr>
+      <tr>
+          <td> <%= @order.billing_name %> - <%= @order.billing_address %></td>
+      </tr>
+      <tr>
+          <td> Receiver</td>
+      </tr>
+      <tr>
+          <td> <%= @order.shipping_name %> - <%= @order.shipping_address %></td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
