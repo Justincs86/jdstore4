@@ -20,6 +20,7 @@
                <% end %>
               <% end %>
            </td>
+           <td> <%= link_to(cart_item.product.title, product_path(cart_item.product)) %> </td>
            <td> <%= cart_item.product.price %> </td>
            <td> <%= cart_item.quantity %> </td>
        </tr>
@@ -28,9 +29,11 @@
 </table>
 
 
-    <div class="pull-right">
-      <span class="price">
-        Total price
+    <div class="clearfix ">
+      <span class="price pull-right">
+          <span>
+            <%= render_cart_total_price(current_cart) %>
+          </span>
       </span>
     </div>
 
