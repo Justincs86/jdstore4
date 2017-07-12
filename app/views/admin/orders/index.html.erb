@@ -1,0 +1,23 @@
+<h2> Order List </h2>
+
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th> #</th>
+          <th> Time </th>
+          <th> Purchaser</th>
+          <th> Order Status</th>
+      </tr>
+  </thead>
+  <tbody>
+
+      <% @orders.each do |order| %>
+      <tr>
+          <td> <%= order.id %></td>
+          <td> <%= order.created_at.to_s(:long) %></td>
+          <td> <%= order.user.email %></td>
+          <td> <%= order.aasm_state %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
