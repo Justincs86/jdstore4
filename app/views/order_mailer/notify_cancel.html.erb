@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h1> Order List </h1>
+    <small>
+        <%= link_to("Order Link", order_url(@order.token)) %>
+    </small>
+
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th width="70%"> Product List</th>
+              <th> Price </th>
+              <th> Quantity</th>
+              <th> Subtotal</th>
+          </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+              <td> <%= product_list.product_name %></td>
+              <td> <%= product_list.product_price %></td>
+              <td> <%+ product_list.quantity %></td>
+              <td> <%= product_list.quantity * product_list.product_price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <hr>
+
+    <div class="price">
+      <span class="pull-right">
+        Total <%= @order.total %>
+      </span>
+    </div>
+
+
+    <h2> Mailing Infomation</h2>
+
+    <table class="table table-striped tableb-bordered">
+      <tbody>
+          <tr>
+              <th> Purchaser</th>
+          </tr>
+          <tr>
+              <th> <%= @order.billing_name %> - <% @order.billing_address %></th>
+          </tr>
+          <tr>
+              <th> Receiver </th>
+          </tr>
+          <tr>
+              <th> <%= @order.shipping_name %> - <%= @order.shipping_address %></th>
+          </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+
+</div>
