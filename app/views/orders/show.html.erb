@@ -48,6 +48,12 @@
       </tr>
     </table>
 
+    <div class="pull-left">
+      <% if @order.order_placed? || @order.paid? %>
+         <%= link_to("Cancel Order", apply_to_cancel_order_path(@order.token), method: :post, class: "btn btn-danger") %>
+      <% end %>
+    </div>
+
     <% if !@order.is_paid? %>
       <div class="group pull-right">
         <%= link_to("Wechatpay", pay_with_wechat_order_path(@order.token), method: :post, class: "btn btn-danger") %>

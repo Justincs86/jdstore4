@@ -28,7 +28,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def cancel
-    @order = Order.fidn(params[:id])
+    @order = Order.find(params[:id])
     @order.cancel_order!
 
     redirect_to :back
@@ -40,6 +40,9 @@ class Admin::OrdersController < ApplicationController
 
     redirect_to :back
   end
+
+
+
 
 
 end
